@@ -1,0 +1,20 @@
+<div class="user-form">
+  <h2>{{ isEditMode ? 'Editar Usuario' : 'Añadir Usuario' }}</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label>
+      Nombre:
+      <input type="text" [(ngModel)]="user.name" name="name" required>
+    </label>
+    <label>
+      Email:
+      <input type="email" [(ngModel)]="user.email" name="email" required>
+    </label>
+    <label>
+      Contraseña:
+      <input type="password" [(ngModel)]="user.password" name="password" *ngIf="!isEditMode" required>
+    </label>
+    <button type="submit">{{ isEditMode ? 'Actualizar' : 'Guardar' }}</button>
+  </form>
+</div>
+
+

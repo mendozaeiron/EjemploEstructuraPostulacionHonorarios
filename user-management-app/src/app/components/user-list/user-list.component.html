@@ -1,0 +1,30 @@
+<div class="user-list">
+  <h2>Lista de Usuarios</h2>
+  <p>Aquí se mostrará la lista de usuarios.</p>
+  <button routerLink="/users/add">Añadir Usuario</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td data-label="ID">{{ user.id }}</td>
+        <td data-label="Nombre">{{ user.name }}</td>
+        <td data-label="Email">{{ user.email }}</td>
+        <td data-label="Acciones">
+          <button (click)="editUser(user.id)">Editar</button>
+          <button (click)="deleteUser(user.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
